@@ -20,6 +20,14 @@
     font-weight: 400;
 }
 
+.breadcrumbs {
+    background-color: #F9FBFD;
+}
+
+.no-skin .sidebar {
+    background-color: #F9FBFD;
+}
+
 .nav-tabs.background-white {
     padding-top: 0;
     background-color: #FFFFFF;
@@ -42,6 +50,7 @@
 
 .table-style-1 {
     border-top: 1px solid #C2C3C5 !important;
+    border-bottom: 1px solid #C2C3C5 !important;
 }
 
 .table-style-1 .header-group > td {
@@ -65,3 +74,35 @@
     font-weight: 400;
     background: #E8EFF7 !important;
 }
+
+#navbar {
+    border-bottom: 5px solid #59B8F2;
+    background: url("header_bg.png") repeat-x;
+}
+
+.navbar-container {
+    padding: 0 48px 0 0;
+}
+
+.user-info-container {
+    margin-top: 16px;
+    font-size: 16px;
+    position: relative;
+}
+
+.user-info-container a {
+    color: #EFF;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.user-info-container i {
+    vertical-align: middle;
+}
+
+.logo {
+    width: 420px;
+    height: 60px;
+    background: url("logo.png");
+}
+

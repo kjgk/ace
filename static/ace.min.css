@@ -2283,7 +2283,7 @@ pre.prettyprint {
 }
 
 body.mob-safari .sidebar.sidebar-fixed {
-    top: 45px
+    top: 65px
 }
 
 @media (max-width: 479px) {
@@ -2294,7 +2294,7 @@ body.mob-safari .sidebar.sidebar-fixed {
 
 @media (max-width: 991px) {
     body.mob-safari .navbar-fixed-top + .main-container .sidebar.responsive {
-        top: 45px
+        top: 65px
     }
 }
 
@@ -18534,7 +18534,7 @@ input.typeahead.scrollable ~ .tt-dropdown-menu {
 }
 
 .navbar-fixed-top + .main-container {
-    padding-top: 45px
+    padding-top: 65px
 }
 
 @media (max-width: 479px) {
@@ -18543,7 +18543,7 @@ input.typeahead.scrollable ~ .tt-dropdown-menu {
     }
 
     .navbar-fixed-top.navbar-collapse + .main-container {
-        padding-top: 45px
+        padding-top: 65px
     }
 }
 
