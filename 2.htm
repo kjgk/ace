@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <title>UI Elements - Ace Admin</title>
+
+    <meta name="description" content="Common UI Features &amp; Elements">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
+
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="static/jquery-ui.custom.min.css">
+    <link rel="stylesheet" href="static/jquery.gritter.css">
+
+    <!-- text fonts -->
+    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">-->
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="static/ace.min.css" id="main-ace-style">
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="static/ace-part2.min.css"/>
+    <![endif]-->
+    <link rel="stylesheet" href="static/ace-skins.min.css">
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="static/ace-ie.min.css"/>
+    <![endif]-->
+
+    <link rel="stylesheet" href="static/ace-custom.css"/>
+
+    <!-- inline styles related to this page -->
+    <style>
+        /* some elements used in demo only */
+        .spinner-preview {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .dropdown-preview {
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+        .dropdown-preview > .dropdown-menu {
+            display: block;
+            position: static;
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <!-- ace settings handler -->
+    <script src="static/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="static/html5shiv/html5shiv.min.js"></script>
+    <script src="static/respond/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css"></style>
+</head>
+
+<body class="no-skin">
+<div id="navbar" class="navbar navbar-default">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    <div class="navbar-container" id="navbar-container">
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="navbar-header pull-left">
+            <a href="#" class="navbar-brand">
+                <small>
+                    <i class="fa fa-leaf"></i>
+                    Ace Admin
+                </small>
+            </a>
+        </div>
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+
+        </div>
+    </div>
+    <!-- /.navbar-container -->
+</div>
+
+<div class="main-container" id="main-container">
+<script type="text/javascript">
+    try {
+        ace.settings.check('main-container', 'fixed')
+    } catch (e) {
+    }
+</script>
+
+<div id="sidebar" class="sidebar responsive">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('sidebar', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+            <i class="fa fa-desktop"></i>功能导航
+        </div>
+
+        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <i class="fa fa-desktop"></i>
+        </div>
+    </div>
+    <!-- /.menu title -->
+
+    <ul class="nav nav-list" style="top: 0px;">
+
+        <li class="active open hsub">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-search"></i>
+                <span class="menu-text"> 信息查询 </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+                <li class="">
+                    <a href="">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        余额查询
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        打印成交单
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+                <li class="">
+                    <a href="">
+                        <i class="menu-icon fa fa-caret-right"></i>
+                        点击成交查询
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+            </ul>
+        </li>
+
+        <li class="">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text"> 债券信息 </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+        </li>
+
+        <li class="">
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-user"></i>
+                <span class="menu-text"> 用户管理 </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+        </li>
+
+    </ul>
+    <!-- /.nav-list -->
+
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
+
+    <script type="text/javascript">
+        try {
+            ace.settings.check('sidebar', 'collapsed')
+        } catch (e) {
+        }
+    </script>
+</div>
+
+<div class="main-content">
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('breadcrumbs', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    <ul class="breadcrumb">
+        <!--<li>-->
+        <!--<i class="ace-icon fa fa-home home-icon"></i>-->
+        <!--<a href="#">Home</a>-->
+        <!--</li>-->
+
+        <li>
+            <a href="#">信息查询</a>
+        </li>
+        <li class="active">余额查询</li>
+    </ul>
+    <!-- /.breadcrumb -->
+
+    <div class="nav-search" id="nav-search">
+
+    </div>
+    <!-- /.nav-search -->
+</div>
+
+<div class="page-content">
+<div class="ace-settings-container" id="ace-settings-container">
+    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+        <i class="ace-icon fa fa-cog bigger-150"></i>
+    </div>
+
+    <div class="ace-settings-box clearfix" id="ace-settings-box">
+        <div class="pull-left width-50">
+            <div class="ace-settings-item">
+                <div class="pull-left">
+                    <select id="skin-colorpicker" class="hide">
+                        <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                        <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                        <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                        <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                    </select>
+                </div>
+                <span>&nbsp; Choose Skin</span>
+            </div>
+
+            <div class="ace-settings-item">
+                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar">
+                <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+            </div>
+
+            <div class="ace-settings-item">
+                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar">
+                <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+            </div>
+
+            <div class="ace-settings-item">
+                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs">
+                <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+            </div>
+
+            <div class="ace-settings-item">
+                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl">
+                <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+            </div>
+
+            <div class="ace-settings-item">
+                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container">
+                <label class="lbl" for="ace-settings-add-container">
+                    Inside
+                    <b>.container</b>
+                </label>
+            </div>
+        </div>
+        <!-- /.pull-left -->
+
+        <div class="pull-left width-50">
+            <div class="ace-settings-item">
+                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover">
+                <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+            </div>
+
+            <div class="ace-settings-item">
+                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact">
+                <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+            </div>
+
+            <div class="ace-settings-item">
+                <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight">
+                <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+            </div>
+        </div>
+        <!-- /.pull-left -->
+    </div>
+    <!-- /.ace-settings-box -->
+</div>
+<!-- /.ace-settings-container -->
+
+<div class="page-content-area">
+
+
+<div class="row">
+<div class="col-xs-12">
+<!-- PAGE CONTENT BEGINS -->
+<div class="row">
+<div class="col-xs-12">
+<div class="tabbable">
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a data-toggle="tab" href="#tab1">
+            <i class="ace-icon fa fa-rmb bigger-120"></i>
+            余额查询
+        </a>
+    </li>
+
+    <li>
+        <a data-toggle="tab" href="#tab2">
+            <i class="ace-icon fa fa-print bigger-120"></i>
+            打印成交单
+        </a>
+    </li>
+    <li>
+        <a data-toggle="tab" href="#tab3">
+            <i class="ace-icon fa fa-gavel bigger-120"></i>
+            点击成交查询
+        </a>
+    </li>
+
+</ul>
+
+<div class="tab-content">
+    <div id="tab1" class="tab-pane fade in active">
+        <div class="row">
+            <div class="col-xs-1 hidden-xs">
+                <div class="search-icon">
+                    <i class="fa fa-desktop bigger-300"></i>
+
+                    <div>查询条件</div>
+                </div>
+            </div>
+            <div class="col-xs-11">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-xs-1 control-label no-padding-right"> 债券代码 </label>
+
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
+
+                        <label class="col-xs-1 control-label no-padding-right"> 债券简称 </label>
+
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
+
+                        <label class="col-xs-1 control-label no-padding-right"> 债券类别 </label>
+
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-1 control-label no-padding-right"> 主评级别 </label>
+
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
+
+                        <label class="col-xs-1 control-label no-padding-right"> 代偿期限 </label>
+
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
+
+                        <label class="col-xs-1 control-label no-padding-right"> </label>
+
+                        <div class="col-xs-2 checkbox">
+                            <label>
+                                <input name="form-field-checkbox" class="ace ace-checkbox-1" type="checkbox">
+                                <span class="lbl"> 是否持仓</span>
+                            </label>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-info btn-sm ">
+                                <i class="ace-icon fa fa-search fa-fw bigger-110"></i> 查询
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="widget-box transparent">
+                    <div class="widget-body">
+                        <div class="widget-main padding-6 no-padding-left no-padding-right">
+                            <table class="table table-style-1 table-hover table-responsive table-striped" id="datatable">
+                                <thead>
+                                <tr class="header-group">
+                                    <td colspan="5">债券基本信息</td>
+                                    <td colspan="7">
+                                        当前最优报价（买入/卖出）
+                                        <span class="badge badge-danger">买</span>
+                                        <span class="badge badge-success">卖</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>债卷代码</td>
+                                    <td>债卷简称</td>
+                                    <td>待偿期限（天）</td>
+                                    <td>主体评级</td>
+                                    <td>债卷类型</td>
+                                    <td>净价（元）</td>
+                                    <td>到期收益率（%）</td>
+                                    <td>全价（元）</td>
+                                    <td>券面总额（万元）</td>
+                                    <td>最新净价（元）</td>
+                                    <td>最新全价（元）</td>
+                                    <td>最新到期收益率（%）</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><a>041454018</a></td>
+                                    <td>05铁道债</td>
+                                    <td>4003</td>
+                                    <td>4003</td>
+                                    <td>中期票据</td>
+                                    <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                </tr>
+                                <tr>
+                                    <td>041454018</td>
+                                    <td>05铁道债</td>
+                                    <td>4003</td>
+                                    <td>4003</td>
+                                    <td>中期票据</td>
+                                    <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                    <td>290.00</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <ul class="pagination">
+                        <li class="disabled">
+                            <a href="#">
+                                <i class="ace-icon fa fa-angle-double-left"></i>
+                            </a>
+                        </li>
+
+                        <li class="active">
+                            <a href="#">1</a>
+                        </li>
+
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+
+                        <li>
+                            <a href="#">5</a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-angle-double-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tab2" class="tab-pane fade in ">
+        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+    </div>
+    <div id="tab3" class="tab-pane fade in ">
+        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+    </div>
+</div>
+</div>
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+
+<!-- PAGE CONTENT ENDS -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.page-content-area -->
+</div>
+<!-- /.page-content -->
+</div>
+<!-- /.main-content -->
+
+<div class="footer">
+    <div class="footer-inner">
+        <div class="footer-content">
+
+
+        </div>
+    </div>
+</div>
+
+<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+    <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+</a>
+</div>
+<!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<!--[if IE]>
+<script src="static/jquery1x.min.js"></script>
+<![endif]-->
+
+<!--[if !IE]> -->
+<script src="static/jquery.min.js"></script>
+<!-- <![endif]-->
+
+
+<script type="text/javascript">
+    if ('ontouchstart' in document.documentElement) document.write("<script src='static/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+</script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+<script src="static/excanvas.min.js"></script>
+<![endif]-->
+<script src="static/jquery-ui.custom.min.js"></script>
+<script src="static/jquery.ui.touch-punch.min.js"></script>
+
+<!-- ace scripts -->
+<script src="static/ace-elements.min.js"></script>
+<script src="static/ace.min.js"></script>
+
+<script>
+    $(function () {
+
+    });
+</script>
+
+
+</body>
+</html>
