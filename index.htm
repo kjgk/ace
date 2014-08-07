@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -68,7 +68,7 @@
     <style type="text/css"></style>
 </head>
 
-<body class="no-skin">
+<body ng-controller="MainController" class="no-skin">
 <div id="navbar" class="navbar navbar-default">
     <script type="text/javascript">
         try {
@@ -83,7 +83,11 @@
         </div>
 
         <div class="navbar-header pull-right" role="navigation">
-            <div class="user-info-container">
+            <div class="datetime-container pull-left">
+                <i class="fa fa-circle"></i>
+                {{currentTime}}
+            </div>
+            <div class="user-info-container pull-left">
                 <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                     <i class="ace-icon fa fa-user"></i>
                     <span class="user-info">王志宁</span>
@@ -268,13 +272,13 @@
             </div>
 
             <!--<div class="ace-settings-item">-->
-                <!--<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs">-->
-                <!--<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>-->
+            <!--<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs">-->
+            <!--<label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>-->
             <!--</div>-->
 
             <!--<div class="ace-settings-item">-->
-                <!--<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl">-->
-                <!--<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>-->
+            <!--<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl">-->
+            <!--<label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>-->
             <!--</div>-->
 
             <div class="ace-settings-item">
@@ -317,316 +321,148 @@
 <!-- PAGE CONTENT BEGINS -->
 <div class="row">
 <div class="col-xs-12">
-    <div class="tabbable">
-        <ul class="nav nav-tabs">
-            <li class="active">
-                <a data-toggle="tab" href="#tab1">
-                    <i class="ace-icon fa fa-rmb bigger-120"></i>
-                    余额查询
-                </a>
-            </li>
+<div class="tabbable">
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a data-toggle="tab" href="#tab1">
+            <i class="ace-icon fa fa-rmb bigger-120"></i>
+            余额查询
+        </a>
+    </li>
 
-            <li>
-                <a data-toggle="tab" href="#tab2">
-                    <i class="ace-icon fa fa-print bigger-120"></i>
-                    打印成交单
-                </a>
-            </li>
-            <li>
-                <a data-toggle="tab" href="#tab3">
-                    <i class="ace-icon fa fa-gavel bigger-120"></i>
-                    点击成交查询
-                </a>
-            </li>
+    <li>
+        <a data-toggle="tab" href="#tab2">
+            <i class="ace-icon fa fa-print bigger-120"></i>
+            打印成交单
+        </a>
+    </li>
+    <li>
+        <a data-toggle="tab" href="#tab3">
+            <i class="ace-icon fa fa-gavel bigger-120"></i>
+            点击成交查询
+        </a>
+    </li>
 
-        </ul>
+</ul>
 
-        <div class="tab-content">
-            <div id="tab1" class="tab-pane fade in active">
-                <div class="row">
-                    <div class="col-xs-1 hidden-xs">
-                        <div class="search-icon">
-                            <i class="fa fa-desktop bigger-300"></i>
+<div class="tab-content">
+    <div id="tab1" class="tab-pane fade in active">
+        <div class="row">
+            <div class="col-xs-1 hidden-xs">
+                <div class="search-icon">
+                    <i class="fa fa-desktop bigger-300"></i>
 
-                            <div>查询条件</div>
-                        </div>
-                    </div>
-                    <div class="col-xs-11">
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label class="col-xs-1 control-label no-padding-right"> 债券代码 </label>
-
-                                <div class="col-xs-2">
-                                    <input type="text" placeholder="" class="col-xs-12">
-                                </div>
-
-                                <label class="col-xs-1 control-label no-padding-right"> 债券简称 </label>
-
-                                <div class="col-xs-2">
-                                    <input type="text" placeholder="" class="col-xs-12">
-                                </div>
-
-                                <label class="col-xs-1 control-label no-padding-right"> 债券类别 </label>
-
-                                <div class="col-xs-2">
-                                    <input type="text" placeholder="" class="col-xs-12">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-xs-1 control-label no-padding-right"> 主评级别 </label>
-
-                                <div class="col-xs-2">
-                                    <input type="text" placeholder="" class="col-xs-12">
-                                </div>
-
-                                <label class="col-xs-1 control-label no-padding-right"> 代偿期限 </label>
-
-                                <div class="col-xs-2">
-                                    <input type="text" placeholder="" class="col-xs-12">
-                                </div>
-
-                                <label class="col-xs-1 control-label no-padding-right"> </label>
-
-                                <div class="col-xs-2 checkbox">
-                                    <label>
-                                        <input name="form-field-checkbox" class="ace ace-checkbox-1" type="checkbox">
-                                        <span class="lbl"> 是否持仓</span>
-                                    </label>
-                                </div>
-
-                                <div class="col-xs-2">
-                                    <button type="button" class="btn btn-info btn-sm ">
-                                        <i class="ace-icon fa fa-search fa-fw bigger-110"></i> 查询
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <div>查询条件</div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="widget-box transparent">
-                            <div class="widget-body">
-                                <div class="widget-main padding-6 no-padding-left no-padding-right">
-                                    <table class="table table-style-1 table-hover table-responsive table-striped" id="datatable">
-                                        <thead>
-                                        <tr class="header-group">
-                                            <td colspan="5">债券基本信息</td>
-                                            <td colspan="7">
-                                                当前最优报价（买入/卖出）
-                                                <span class="badge badge-danger">买</span>
-                                                <span class="badge badge-success">卖</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>债卷代码</td>
-                                            <td>债卷简称</td>
-                                            <td>待偿期限（天）</td>
-                                            <td>主体评级</td>
-                                            <td>债卷类型</td>
-                                            <td>净价（元）</td>
-                                            <td>到期收益率（%）</td>
-                                            <td>全价（元）</td>
-                                            <td>券面总额（万元）</td>
-                                            <td>最新净价（元）</td>
-                                            <td>最新全价（元）</td>
-                                            <td>最新到期收益率（%）</td>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a>041454018</a></td>
-                                            <td>05铁道债</td>
-                                            <td>4003</td>
-                                            <td>4003</td>
-                                            <td>中期票据</td>
-                                            <td><span class="text-danger bolder">290</span>/<span class="text-success bolder">194</span></td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                            <td>290.00</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+            </div>
+            <div class="col-xs-11">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-xs-1 control-label no-padding-right"> 债券代码 </label>
+
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
                         </div>
 
-                        <div class="pull-right">
-                            <ul class="pagination">
-                                <li class="disabled">
-                                    <a href="#">
-                                        <i class="ace-icon fa fa-angle-double-left"></i>
-                                    </a>
-                                </li>
+                        <label class="col-xs-1 control-label no-padding-right"> 债券简称 </label>
 
-                                <li class="active">
-                                    <a href="#">1</a>
-                                </li>
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
 
-                                <li>
-                                    <a href="#">2</a>
-                                </li>
+                        <label class="col-xs-1 control-label no-padding-right"> 债券类别 </label>
 
-                                <li>
-                                    <a href="#">3</a>
-                                </li>
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
+                    </div>
 
-                                <li>
-                                    <a href="#">4</a>
-                                </li>
+                    <div class="form-group">
+                        <label class="col-xs-1 control-label no-padding-right"> 主评级别 </label>
 
-                                <li>
-                                    <a href="#">5</a>
-                                </li>
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
 
-                                <li>
-                                    <a href="#">
-                                        <i class="ace-icon fa fa-angle-double-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                        <label class="col-xs-1 control-label no-padding-right"> 代偿期限 </label>
+
+                        <div class="col-xs-2">
+                            <input type="text" placeholder="" class="col-xs-12">
+                        </div>
+
+                        <label class="col-xs-1 control-label no-padding-right"> </label>
+
+                        <div class="col-xs-2 checkbox">
+                            <label>
+                                <input name="form-field-checkbox" class="ace ace-checkbox-1" type="checkbox">
+                                <span class="lbl"> 是否持仓</span>
+                            </label>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <button type="button" class="btn btn-info btn-sm ">
+                                <i class="ace-icon fa fa-search fa-fw bigger-110"></i> 查询
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="widget-box transparent">
+                    <div class="widget-body">
+                        <div class="widget-main padding-6 no-padding-left no-padding-right">
+                            <table class="table table-style-1 table-hover table-condensed table-responsive table-striped" at-table at-paginated
+                                   at-list="dataList"
+                                   at-config="tableConfig">
+                                <thead>
+                                <tr class="header-group">
+                                    <th colspan="5">债券基本信息</th>
+                                    <th colspan="7">
+                                        当前最优报价（买入/卖出）
+                                        <span class="badge badge-danger">买</span>
+                                        <span class="badge badge-success">卖</span>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td at-implicit at-attribute="field_1" at-title="债卷代码"></td>
+                                    <td at-implicit at-attribute="field_2" at-title="债卷简称"></td>
+                                    <td at-implicit at-attribute="field_3" at-title="待偿期限（天）"></td>
+                                    <td at-implicit at-attribute="field_4" at-title="主体评级"></td>
+                                    <td at-implicit at-attribute="field_5" at-title="债卷类型"></td>
+                                    <td at-attribute="field_6" at-title="净价（元）">
+                                        <span class="text-danger bolder">{{item.field_6[0]}}</span>/<span class="text-success bolder">{{item.field_6[1]}}</span>
+                                    </td>
+                                    <td at-implicit at-attribute="field_7" at-title="到期收益率（%）"></td>
+                                    <td at-implicit at-attribute="field_8" at-title="全价（元）"></td>
+                                    <td at-implicit at-attribute="field_9" at-title="券面总额（万元）"></td>
+                                    <td at-implicit at-attribute="field_10" at-title="最新净价（元）"></td>
+                                    <td at-implicit at-attribute="field_11" at-title="最新全价（元）"></td>
+                                    <td at-implicit at-attribute="field_12" at-title="最新到期收益率（%）"></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="tab2" class="tab-pane fade in ">
-                <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
-            </div>
-            <div id="tab3" class="tab-pane fade in ">
-                <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+
+                <div class="pull-right">
+                    <at-pagination at-list="dataList" at-config="tableConfig"></at-pagination>
+                </div>
             </div>
         </div>
     </div>
+    <div id="tab2" class="tab-pane fade in ">
+        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+    </div>
+    <div id="tab3" class="tab-pane fade in ">
+        <p>Raw denim you probably haven't heard of them jean shorts Austin.</p>
+    </div>
+</div>
+</div>
 </div>
 <!-- /.col -->
 </div>
@@ -668,6 +504,7 @@
 <script src="static/jquery.min.js"></script>
 <!-- <![endif]-->
 
+<script src="static/angular.min.js"></script>
 
 <script type="text/javascript">
     if ('ontouchstart' in document.documentElement) document.write("<script src='static/jquery.mobile.custom.min.js'>" + "<" + "/script>");
@@ -681,10 +518,55 @@
 <![endif]-->
 <script src="static/jquery-ui.custom.min.js"></script>
 <script src="static/jquery.ui.touch-punch.min.js"></script>
+<script src="static/jquery-dateFormat.min.js"></script>
+<script src="static/angular-table.js"></script>
 
 <!-- ace scripts -->
 <script src="static/ace-elements.min.js"></script>
 <script src="static/ace.min.js"></script>
+
+<script>
+    angular.module('app', ['angular-table'])
+            .controller('MainController', ['$scope', '$interval', function ($scope, $interval) {
+
+                $scope.dataList = [];
+                var ramdomInt = function () {
+                    return Math.ceil(Math.random() * 100)
+                }
+                for (var i = 0; i < 124; i++) {
+                    $scope.dataList.push({
+                        field_1: '0414540' + ramdomInt() , field_2: '05铁道债', field_3: ramdomInt(), field_4: ramdomInt(), field_5: '中期票据', field_6: [ramdomInt(), ramdomInt()],
+                        field_7: ramdomInt(), field_8: ramdomInt(), field_9: ramdomInt(), field_10: ramdomInt(), field_11: ramdomInt(), field_12: ramdomInt(), field_13: ramdomInt()
+                    })
+                }
+
+                $scope.tableConfig = {
+                    itemsPerPage: 10,
+                    maxPages: 5,
+                    fillLastPage: false
+                }
+
+                var setCurrentTime = function () {
+                    var currentTime = $.format.date(new Date(), 'yyyy-MM-dd ')
+                    currentTime += {
+                        Mon: '星期一',
+                        Tue: '星期二',
+                        Wed: '星期三',
+                        Thu: '星期四',
+                        Fri: '星期五',
+                        Sat: '星期六',
+                        Sun: '星期天'
+                    }[$.format.date(new Date(), 'E')];
+                    currentTime += $.format.date(new Date(), ' HH:mm')
+                    $scope.currentTime = currentTime;
+                }
+
+                setCurrentTime();
+                $interval(function () {
+                    setCurrentTime();
+                }, 1000)
+            }])
+</script>
 
 </body>
 </html>
