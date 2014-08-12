@@ -1,0 +1,150 @@
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    font-family: "Microsoft YaHei", "Open Sans", Arial, Helvetica, Sans-Serif;
+}
+
+#header {
+    padding-top: 10px;
+    background-color: #2A569D;
+    height: auto;
+    border-bottom: 7px solid #FFCB00;
+}
+
+.header-info {
+    color: #FFFFFF;
+    font-size: 14px;
+    padding-left: 24px;
+}
+
+.header-info span {
+    line-height: 18px;
+}
+
+.header-info .logo {
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-right: 12px;
+    background: url("../static/logo_sm.png");
+}
+
+
+.nav-tabs-gio {
+    border-bottom: 0;
+}
+
+.nav-tabs-gio > li > a {
+    border-radius: 0;
+    color: #fff;
+    margin: 0 10px 0 12px;
+    padding: 12px 15px 18px 15px;
+    font-size: 16px;
+}
+
+.nav-tabs-gio > li > a > i {
+    font-size: 18px;
+}
+
+.nav-tabs-gio > li.active > a, .nav-tabs-gio > li.active > a:hover, .nav-tabs-gio > li.active > a:focus {
+    color: #555;
+    background-color: #FFCB00;
+    border: 1px solid transparent;
+}
+
+.nav-tabs-gio > li > a:hover, .nav-tabs-gio > li > a:focus {
+    color: #555;
+    background: #C3D7F2;
+    border: 1px solid transparent;
+}
+
+.nav-tabs-gio > li:first-child:before, .nav-tabs-gio > li.active:before, .nav-tabs-gio > li.active + li:before {
+    display: none;
+}
+
+.nav-tabs-gio > li:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    height: 110%;
+    border-left: 1px solid #173F80;
+    border-right: 1px solid #3F6EBA;
+}
+
+.user-control {
+    margin: 0 23px;
+    font-size: 16px;
+}
+
+.user-control > a {
+    padding: 11px 12px 15px;
+    float: left;
+    color: #C3D7F2;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.user-control > a:hover {
+    color: #FFFFFF;
+}
+
+#main {
+    padding-top: 24px;
+}
+
+#main:before {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    max-width: inherit;
+    bottom: 0;
+    top: 70px;
+    background-color: #0490a6;
+    /*background-image: url("../static/avatar.png");*/
+}
+
+.pie-container {
+    padding: 10px;
+    float: right;
+    margin-top: 10px;
+    width: 240px;
+    height: 200px;
+    background: #FFFFFF;
+    background: rgba(255, 255, 255, .8);
+    -pie-background: rgba(255, 255, 255, .8);
+}
+
+.pie-container label {
+    font-size: 15px;
+    color: #4976BF;
+}
+
+.chart {
+    position: relative;
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.chart canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.percent {
+    display: inline-block;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+.percent:after {
+    content: '%';
+    margin-left: 0.1em;
+    font-size: .8em;
+}
