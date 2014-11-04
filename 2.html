@@ -16,19 +16,19 @@
         <div class="header-info">
             <div class="logo pull-left"></div>
             <div class="pull-left" style="padding-top: 3px;">
-                <span>市级机关办公用房</span> <br>
+                <span>市级机关房产</span> <br>
                 <span style="font-size: 140%;">可视化系统</span>
             </div>
         </div>
         <ul class="nav nav-tabs pull-right nav-tabs-gio" role="tablist">
             <li class="active"><a href="#"><i class="fa fa-home fa-fw"></i> 首页</a></li>
             <li><a href="#"><i class="fa fa-map-marker fa-fw"></i> 地图</a></li>
-            <li><a href="#"><i class="fa fa-building-o fa-fw"></i> 数字楼宇</a></li>
+            <li><a href="javascript:open3()"><i class="fa fa-building-o fa-fw"></i> 数字楼宇</a></li>
             <li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 决策分析</a></li>
             <li><a href="#"><i class="fa fa-crosshairs fa-fw"></i> 我的关注</a></li>
             <li>
                 <div class="user-control">
-                    <a class=""><i class="glyphicon glyphicon-user"></i> 王志前</a>
+                    <a class=""><i class="glyphicon glyphicon-user"></i> 李鑫</a>
                     <a class=""><i class="glyphicon glyphicon-off"></i> 退出</a>
                 </div>
             </li>
@@ -41,18 +41,20 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="pie-container">
-                    <label>办公用房总处数</label>
+                    <label>办公用房总处数 <small>[单位:处]</small></label>
                     <span class="chart" data-percent="60">
-                        <span class="percent">全市办公用房</span>
+                        <span class="percent" title="全市办公用房"></span>
                     </span>
+                    <h3 data-max="2108"></h3>
                 </div>
             </div>
             <div class="col-xs-12">
                 <div class="pie-container">
-                    <label>办公用房总处数</label>
+                    <label>办公用房总建筑面积 <small>[单位:平方米]</small></label>
                     <span class="chart" data-percent="45">
-                        <span class="percent">全市办公用房</span>
+                        <span class="percent" title="办公用房总建筑面积"></span>
                     </span>
+                    <h3 data-max="3689219">aaa</h3>
                 </div>
             </div>
         </div>
@@ -75,13 +77,24 @@
             barColor: '#509AD4',
             lineWidth: 12,
             lineCap: 'butt',
-            size: 150,
+            size: 170,
             scaleLength: 0,
+            animate: {
+                duration: 3000,
+                enabled: true
+            },
             onStep: function (from, to, percent) {
-                $(this.el).find('.percent').html('全市办公用房<br/>' + Math.round(percent));
+                var title = $(this.el).find('.percent').attr('title');
+                $(this.el).find('.percent').html(title + '<br/>' + Math.round(percent));
+                var maxValue = $(this.el).parent().find('h3').attr('data-max');
+                $(this.el).parent().find('h3').html(Math.round(maxValue * percent  / 100) + '/' + maxValue);
             }
         });
     });
+
+    var open3 = function(){
+        window.open('3.html','newwindow','height=540,width=1260,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+    }
 </script>
 
 </body>

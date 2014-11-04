@@ -19,6 +19,7 @@ body {
     padding-top: 24px;
     height: auto;
     color: #2A569D;
+    min-width: 1230px;
 }
 
 .header-info > div {
